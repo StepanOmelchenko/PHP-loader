@@ -6,26 +6,26 @@
   <head>
     <meta charset="utf-8">
     <title>Img downloader</title>
-    <link rel="stylesheet" src="css/main.css">
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
     <div class="wrapper">
       <form class="form" method="post" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <input type="submit" value="Загрузить файл!">
+        <input class="form__input" type="file" name="file">
+        <input class="form__input" type="submit" value="Загрузить файл!">
       </form>
-    </div>
     <?php
-    if(isset($_FILES['file'])) {
-      $check = can_upload($_FILES['file']);
-    
-      if($check === true){
-        make_upload($_FILES['file']);
-        echo "<strong>Файл успешно загружен!</strong>";
-      }else{
-        echo "<strong>$check</strong>";  
+      if(isset($_FILES['file'])) {
+        $check = can_upload($_FILES['file']);
+      
+        if($check === true){
+          make_upload($_FILES['file']);
+          echo "<span class='wrapper__message'>Файл успешно загружен!</span>";
+        }else{
+          echo "<span class='wrapper__message'>$check</span>";  
+        }
       }
-    }
     ?>
+    </div>
   </body>
 </html>
