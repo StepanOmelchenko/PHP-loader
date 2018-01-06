@@ -6,10 +6,11 @@
   <head>
     <meta charset="utf-8">
     <title>Img downloader</title>
+    <link rel="stylesheet" src="css/main.css">
   </head>
   <body>
     <div class="wrapper">
-      <form method="post" enctype="multipart/form-data">
+      <form class="form" method="post" enctype="multipart/form-data">
         <input type="file" name="file">
         <input type="submit" value="Загрузить файл!">
       </form>
